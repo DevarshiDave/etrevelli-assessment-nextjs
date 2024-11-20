@@ -1,0 +1,50 @@
+.header_section {
+    grid-area: header;
+    display: flex;
+    padding: 10px;
+    background-color: lightgray;
+}
+.left_section {
+    grid-area: left-section;
+    border-right: 1px solid lightgray;
+    height: 90vh;
+    overflow-y: auto;
+}
+.right_section {
+    grid-area: right-section;
+}
+.movies_container {
+    display: grid;
+    grid-template: 
+    'header header'
+    'left-section right-section';
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+.movies_list .movie_item {
+    display: flex;
+}
+
+.movies_container .movies_list .movie_id, .movies_container .movies_list .movie_date {
+    color: grey;
+    font-size: smaller;
+}
+
+.movies_container .movies_list .movie_title {
+    margin-left: 10px;
+}
+.movies_container .movies_list .movie_date {
+    margin-left: auto;
+}
+.movies_container .movie_details p {
+    color: grey;
+}
+
+@media (max-width: 600px) {
+    .movies_container {
+        grid-template: 
+        'header'
+        'left-section'
+        'right-section';
+    }
+}
